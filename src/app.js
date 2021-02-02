@@ -3,7 +3,9 @@ const express = require('express')
 const hbs = require('hbs')
 const { get } = require('http')
 const { query } = require('express')
+
 const app = express()
+const port = process.env.PORT || 3000 // set the environment value
 
 const forecast = require('../utils/forecast')
 const geocode = require('../utils/geocode')
@@ -92,6 +94,6 @@ app.get('*', (req, res) => { // * means match anything haven't been matched so f
     })
 })
 
-app.listen(3000, () => {
-    console.log('Server is up on port 3000.')
+app.listen(port, () => {
+    console.log('Server is up on port ' + port)
 })

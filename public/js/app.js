@@ -12,7 +12,7 @@ weatherForm.addEventListener('submit', (e) => {
 
     messageOne.textContent = 'Loading...'
 
-    fetch('http://localhost:3000/weather/?location=' + location).then((response) => { // client side javascript, can not be used in backend node.js script
+    fetch('/weather/?location=' + location).then((response) => { // client side javascript, can not be used in backend node.js script
     response.json().then((data) => {
         if(data.error) {
             messageOne.textContent = data.error
